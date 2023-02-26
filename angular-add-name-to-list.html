@@ -27,7 +27,7 @@
     <title>AngularJS List</title>
 </head>
 <body ng-controller="NameCtrl">
-    <h1>BLOG POST</h1>
+    <h1>PINEAPPLE BLOG</h1>
 
    
         <div id="list1" ng-repeat="name in names">
@@ -37,8 +37,8 @@
         
 
     <form id="form1" ng-submit="addName()">
-        <input type="text" ng-model="enteredName">
-        <input type="submit" value="add">
+        <input id="input1" type="text" ng-model="enteredName" placeholder="Write something here!">
+        <input id="add1" type="submit" value="add">
     </form>
 
 
