@@ -1,0 +1,40 @@
+* {
+    padding: 10;
+    margin: 10;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#span1 {
+    width: 20vw;
+}
+
+#list1 {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / span 4;
+    border: 1px solid black;
+    width: 60vh;
+    margin: 10px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 10;
+}
+
+#form1 {
+    grid-column: 2 / span 8;    
+}
+
+#button1 {
+    width: 20vh;
+}

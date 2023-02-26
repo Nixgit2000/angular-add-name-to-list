@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="angular.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    
     <script>
         var nameApp = angular.module('nameApp', []);
         nameApp.controller('NameCtrl', function ($scope){
-            $scope.names = ['Larry', 'Curly', 'Moe'];
+            $scope.names = ['gm world!', 'ready to take on the day', '#treatyoself'];
 
             $scope.addName = function() {
                 $scope.names.push($scope.enteredName);
+                $scope.enteredName = '';
+            }
+
+            $scope.removeName = function(name) {
+                var i = $scope.names.indexOf(name);
+                $scope.names.splice(i, 1);
             }
 
         })
@@ -19,10 +27,16 @@
     <title>AngularJS List</title>
 </head>
 <body ng-controller="NameCtrl">
-    <ul>
-        <li ng-repeat="name in names">{{name}}</li>
-    </ul>
-    <form ng-submit="addName()">
+    <h1>BLOG POST</h1>
+
+   
+        <div id="list1" ng-repeat="name in names">
+            <p id="span1">{{name}}</p>
+            <button id="button1" href="" ng-click="removeName(name)">remove</button>
+        </div>
+        
+
+    <form id="form1" ng-submit="addName()">
         <input type="text" ng-model="enteredName">
         <input type="submit" value="add">
     </form>
